@@ -1,0 +1,147 @@
+.card-item {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  margin-bottom: 20px;
+  @icnlude trs(0.2s, 0s);
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.card-item .table {
+  margin: 0;
+}
+
+.card-item .table thead th {
+  background: #46ADF5;
+  border: none;
+  color: #fff;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.card-item .table thead th:first-child {
+  border-radius: 10px 0 0 0;
+  padding-left: 258px;
+}
+
+.card-item .table thead th:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+.card-item .table tbody tr td {
+  background: #3A99E0;
+  color: #fff;
+  border: none;
+}
+
+.card-item .table tbody tr td:first-child {
+  padding-left: 258px;
+}
+
+.card-item .table tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 10px;
+}
+
+.card-item .table tbody tr:last-child td:last-child {
+  border-radius: 0 0 10px 0;
+}
+
+.card-item-title {
+  font-size: 28px;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 295px;
+}
+
+.card-item-service {
+  line-height: 18px;
+}
+
+.card-item-price {
+  background: #F85B31 !important;
+  font-size: 28px;
+}
+
+.card-item-price div {
+  width: 300px;
+}
+
+.card-item-car {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 9px 20px;
+}
+
+.card-item:hover, .card-item.active {
+  border-color: #F85B32;
+}
+
+.card-item:hover .card-item-price, .card-item.active .card-item-price {
+  font-weight: 700 !important;
+}
+
+.card-item.active {
+  border-color: #F85B32;
+  -webkit-box-shadow: 0 0 5px rgba(235, 91, 41, 0.2);
+          box-shadow: 0 0 5px rgba(235, 91, 41, 0.2);
+}
+
+.card-item.active .card-item-price {
+  font-weight: 700 !important;
+}
+
+.card-item-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  display: block;
+  margin-top: -32px;
+  padding: 0 20px;
+}
+
+.col-collapse {
+  width: 1px;
+}
+
+.icon-arrow {
+  display: inline-block;
+  width: 40px;
+  height: 64px;
+  background: url("/assets/images/icon-arrow.png") no-repeat 0 0;
+}
+
+.card-warning {
+  color: #fff;
+}
+
+.card-warning .card-header {
+  background: #FD6B3A;
+  font-weight: 700;
+}
+
+.card-warning .card-body {
+  background: #FC5932;
+}
+
+.card-warning .card-footer {
+  background: #FD6B3A;
+}
+
+.card-primary {
+  color: #fff;
+}
+
+.card-primary .card-header {
+  background: #48AEF9;
+  font-weight: 700;
+}
+
+.card-primary .card-body {
+  background: #2990DB;
+}
+
+.card-primary .card-footer {
+  background: #48AEF9;
+}

@@ -1,0 +1,61 @@
+<div class="container"
+	[ngClass]="{'h-100 d-flex align-items-center justify-content-center': cityRates.length == 0}">
+	
+	<div *ngIf="cityRates.length > 0">
+		<div class="form-cards">
+
+		  <div class="card-item" *ngFor="let rate of cityRates; index as i">
+	      <div class="card-item-car">
+	          <img src="assets/images/car-{{i + 1}}.png" alt="">
+	      </div>
+	      <table class="table">
+	        <thead>
+	          <tr>
+	            <th class="col-collapse">
+	                <div class="card-item-title">
+	                    {{rate.title}}
+	                </div>
+	            </th>
+	            <th>
+	                <div class="card-item-service">
+	                    Daewoo Gentra
+	                    <br>и подобное
+	                </div>
+	            </th>
+	            <th class="card-item-price col-collapse">
+	                <div>{{rate.supplyCost}} RUB</div>
+	            </th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td class="text-right">
+	                до {{rate.maxPassengers}} пассажиров
+	            </td>
+	            <td colspan="2">
+	                {{rate.supplyCost}} RUB 
+	                <span *ngIf="client.dataRoute.bothWays">
+	                	туда + {{rate.supplyCost * rate.reverseWayDiscount / 100}} RUB обратно = {{rate.supplyCost + rate.supplyCost * rate.reverseWayDiscount / 100}}
+	                </span>
+	            </td>
+	          </tr>
+	        </tbody>
+	      </table>
+
+	      <span class="card-item-arrow">
+	        <i class="icon-arrow"></i>
+	      </span>
+		  </div>
+		  <!--.card-item-->
+		
+		</div>
+		<!--.form-cards-->
+
+		<app-prev-next-buttons [previous]="'/intro'" [next]="">
+			</app-prev-next-buttons>
+	</div>
+
+	<div class="" *ngIf="cityRates.length == 0">
+		<img src="assets/images/Spinner-1s-200px.gif" alt="">
+	</div>
+</div>

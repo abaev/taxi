@@ -1,0 +1,84 @@
+.form-cars {
+  /*margin-bottom: 30%;*/
+}
+
+.form-intro {
+  background: #2890DA;
+  border-radius: 40px;
+  /* margin-bottom: 62px; */
+}
+
+.form-intro-head {
+  text-align: center;
+  padding: 20px 15px;
+  background: #46ADF5;
+  color: #fff;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.form-intro-head-left {
+  border-radius: 40px 0 0 0;
+}
+
+.form-intro-head-right {
+  border-radius: 0 40px 0 0;
+  border-right: none;
+}
+
+.form-intro-tabs {
+  background: #2890DA;
+}
+
+.form-intro-tab-item {
+  display: none;
+}
+
+.form-intro-tab-item.active {
+  display: block;
+}
+
+.form-intro-container {
+  min-height: 200px;
+  padding: 20px;
+  color: #fff;
+}
+
+.form-intro-container-left {
+  border-radius: 0 0 0 40px;
+  border-right: 2px solid #fff;
+}
+
+.form-intro-container-right {
+  border-radius: 0 0 40px 0;
+  position: relative;
+}
+
+.form-intro-container-right:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: #fff;
+  left: -2px;
+  top: 0;
+}
+
+.form-location-tab {
+  cursor: pointer;
+  background: #207DBC;
+  -webkit-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+
+.form-location-tab.active {
+  background: #F85B31;
+}
+
+.row-zero {
+  margin: 0;
+}
+
+.row-zero > [class*="col-"] {
+  padding: 0;
+}

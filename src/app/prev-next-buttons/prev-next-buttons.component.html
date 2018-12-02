@@ -1,0 +1,15 @@
+<!-- Добавить подходящие символы из Font Awesome -->
+<div class="row">
+	<div class="col-3 offset-6" *ngIf="previous"
+	[ngClass]="{'offset-9': !next}">
+		<a routerLink="{{previous}}" class="btn btn-secondary btn-block">
+		   Назад
+		</a>
+	</div>
+	<div class="col-3" *ngIf="next"
+	[ngClass]="{'offset-9': !previous}">
+		<a routerLink="{{next}}" class="btn btn-primary btn-block">
+		   Далее
+		</a>
+	</div>
+</div>

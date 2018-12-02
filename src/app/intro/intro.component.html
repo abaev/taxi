@@ -1,0 +1,67 @@
+<div class="h-100 d-flex align-items-center">
+	<div class="container">
+		<div class="form-cars form">
+			<div class="form-intro">
+			  <div class="form-intro-header">
+		      <div class="row row-zero">
+	          <div class="col-4">
+              <div class="form-intro-head form-intro-head-left">
+                  Выбор маршрута
+              </div>
+              <div class="form-intro-container form-intro-container-left"
+              [formGroup]="routeSelect">
+
+                <div class="form-group">
+                    <label class="form-check">
+                      <input type="radio" class="form-check-input" formControlName="select" value="Трансфер">
+                      <span class="form-check-label">Трансфер</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-check">
+                    <input type="radio" class="form-check-input"
+                   	formControlName="select" value="Аренда с водителем">
+                    <span class="form-check-label">Аренда с водителем</span>
+                  </label>
+                </div>
+                {{routeSelect.value | json}}
+              </div>
+	          </div>
+	          <div class="col-8">
+              <div class="form-location-data">
+                <div class="row row-zero">
+                  <div class="col-6">
+                      <div class="form-intro-head form-location-tab" data-tab="1" (click)="onClick('route')" [ngClass]="{'active': isDataRouteActive}">
+                          Данные маршрута
+                      </div>
+                  </div>
+                  <div class="col-6">
+                      <div class="form-intro-head form-intro-head-right form-location-tab" data-tab="2" (click)="onClick('data')" [ngClass]="{'active': !isDataRouteActive}">
+                          Данные клиента
+                      </div>
+                  </div>
+                </div>
+
+                <div class="form-intro-container form-intro-container-right">
+                  <div class="form-intro-tabs">
+                    <app-client-data-route *ngIf="isDataRouteActive"></app-client-data-route>
+                    <app-client-data *ngIf="!isDataRouteActive"></app-client-data>
+                  </div>
+                  <!--.form-intro-tabs-->
+                </div>
+                <!--.form-intro-container-->
+
+              </div>
+	          </div>
+		      </div>
+			  </div>
+			  <!--.form-intro-header-->
+			</div>
+		</div>
+
+		<app-prev-next-buttons [previous]="" [next]="'/rate'">
+		</app-prev-next-buttons>
+	</div>
+</div>
+<!--.form-intro-->

@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+	font-family: Open Sans;
+}
+
+.form {
+  padding: 20px 0;
+}
+
+.form .form-check {
+  cursor: pointer;
+}
+
+body {
+	margin: 0; 
+	height: 100vh; 
+}
