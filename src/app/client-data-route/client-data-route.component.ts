@@ -11,7 +11,7 @@ import { ClientService } from '../client.service';
 export class ClientDataRouteComponent implements OnInit, OnDestroy {
 
   constructor(private config: ConfigService,
-  	private client: ClientService,
+  	public client: ClientService,
   	private fb: FormBuilder) { }
 
   citiesList: string[] = this.config.cities;

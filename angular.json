@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css",
               "src/css/datepicker.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -50,6 +51,9 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "ru": {
+              "browserTarget": "taxi:build:ru"
             }
           }
         },
@@ -61,6 +65,9 @@
           "configurations": {
             "production": {
               "browserTarget": "taxi:build:production"
+            },
+            "ru": {
+              "browserTarget": "taxi:build"
             }
           }
         },

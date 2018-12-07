@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ConfigService } from './config.service'
+import { FormArray } from '@angular/forms';
+import { ConfigService } from './config.service';
+import { Rate } from './rate';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,23 @@ export class ClientService {
 		},
 		bothWays: boolean;
 	};
+
+	rate: Rate;
+
+	supply: {
+		date: string | any;
+		time: string;
+		address: string;
+		destinationAddress: string[];
+	};
+
+	passengerData: {
+		passengersQuantity: number;
+		name: string;
+		phone: string;
+		email: string;
+		remark: string;
+	}
 
   constructor(private config: ConfigService) { 
   	this.routeSelect = 'Трансфер';

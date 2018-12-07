@@ -1,0 +1,75 @@
+.card-primary {
+  color: #fff;
+}
+
+.card-primary .card-header {
+  background: #48AEF9;
+  font-weight: 700;
+}
+
+.card-primary .card-body {
+  background: #2990DB;
+}
+
+.card-primary .card-footer {
+  background: #48AEF9;
+}
+
+.total-table {
+  color: #fff;
+  background: #2990DB;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.total-table table {
+  text-align: center;
+  margin: 0;
+}
+
+.total-table table thead th {
+  background: #48AEF9;
+}
+
+.total-table table thead th:first-child {
+  border-radius: 20px 0 0 0;
+}
+
+.total-table table thead th:last-child {
+  border-radius: 0 20px 0 0;
+}
+
+.total-table table tbody td {
+  background: #2990DB;
+  font-size: 20px;
+}
+
+.total-table table tbody tr:last-child td {
+  border-bottom: 1px solid #fff;
+}
+
+.total-table table th {
+  border: none;
+}
+
+.total-table table td {
+  border: none;
+}
+
+.btn-warning {
+  background: #FE6C3A;
+  color: #fff;
+  font-size: 16px;
+}
+
+.btn-warning:hover {
+  background: #FE6C3A;
+  color: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(235, 91, 41, 0.2);
+          box-shadow: 0 0 5px rgba(235, 91, 41, 0.2);
+}
+
+.passenger-data {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

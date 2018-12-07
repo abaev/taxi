@@ -1,5 +1,4 @@
 import { Injectable, Inject } from '@angular/core';
-import { Rates } from './rates';
 import { from } from 'rxjs';
 
 @Injectable({

@@ -11,7 +11,7 @@ import { PrevNextButtonsComponent } from '../prev-next-buttons/prev-next-buttons
 export class IntroComponent implements OnInit {
 
 	isDataRouteActive: boolean = true;
-  constructor(private client: ClientService) { }
+  constructor(public client: ClientService) { }
 
   ngOnInit() {
   	

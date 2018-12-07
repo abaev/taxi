@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }  from '@angular/router';
+
 import { GetRatesService } from '../get-rates.service';
 import { ClientService } from '../client.service';
-import { Rate } from './rate';
+import { Rate } from '../rate';
 
 
 @Component({
@@ -13,8 +15,9 @@ export class RateComponent implements OnInit {
 
 	cityRates: Rate[] = [];
 
-  constructor(private getRates: GetRatesService,
-  	private client: ClientService) { }
+  constructor(private router: Router,
+  	private getRates: GetRatesService,
+  	public client: ClientService) { }
 
   ngOnInit() {
   	this.getRates.get().subscribe(data => {
@@ -33,19 +36,14 @@ export class RateComponent implements OnInit {
   			});
   		});
 
-  		console.log(this.cityRates);
-  		console.log(city);
+  		// Тариф по умолчанию
+  		this.client.rate = this.cityRates[0];
   	});
   }
 
-}
+  onClick(rate: Rate): void {
+  	this.client.rate = rate;
+  	this.router.navigateByUrl('/supply');
+  }
 
-// rates: [{
-//   	title: string;
-//   	supplyCost: number;
-//   	waitingCost: number;
-//   	kmCost: number;
-//   	reverseWayDiscount: number;
-//   	reverseWayWaitingCost: number;
-//   	maxPassengers: number;
-//   }];
+}

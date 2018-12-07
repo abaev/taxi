@@ -1,0 +1,194 @@
+<div class="">	<!-- h-100 d-flex align-items-center -->
+	<div class="container passenger-data">
+		<div class="card card-primary mb-4">
+      <div class="card-header text-center">
+          Данные пасажира
+      </div>
+      <div class="card-body rounded-bottom"
+      [formGroup]="passengerDataForm">
+
+        <div class="form-group">
+          <div class="row align-items-center">
+            <div class="col-5 text-right">
+              <label class="mb-0">Количество пассажиров</label>
+            </div>
+
+            <div class="col-7">
+              <div class="row align-items-center">
+                <div class="col-3">
+			
+                  <select class="form-control" formControlName="passengersQuantity">
+                    <option *ngFor="let n of passengersNumbers" [value]="n">{{n}}</option>
+                  </select>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row align-items-center">
+                <div class="col-5 text-right">
+                    <label class="mb-0">Имя фамилия</label>
+                </div>
+
+                <div class="col-7">
+                    <div class="row align-items-end">
+                        <div class="col-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control"
+                                formControlName="name">
+                                <div class="input-group-append">
+                                  <span class="input-group-text">
+                                      <i class="fas fa-user"></i>
+                                  </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row align-items-center">
+              <div class="col-5 text-right">
+                  <label class="mb-0">Номер мобильного телефона</label>
+              </div>
+
+              <div class="col-7">
+                <div class="row align-items-end">
+                  <div class="col-8">
+                    <div class="input-group">
+                      <input type="tel" class="form-control"
+                      formControlName="phone"
+                      prefix="+7 " mask="(000) 000 00 00">
+                      <div class="input-group-append">
+                        <span class="input-group-text">
+                          <i class="fas fa-phone"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row align-items-center">
+              <div class="col-5 text-right">
+                  <label class="mb-0">Электронная почта</label>
+              </div>
+
+              <div class="col-7">
+                <div class="row align-items-end">
+                  <div class="col-8">
+                    <div class="input-group">
+                      <input type="email" class="form-control"
+                      formControlName="email">
+                      <div class="input-group-append">
+                        <span class="input-group-text">
+                          <i class="fas fa-envelope"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row align-items-center">
+            <div class="col-5 text-right">
+                <label class="mb-0">Примечание</label>
+            </div>
+
+            <div class="col-7">
+              <div class="row align-items-end">
+                <div class="col-8">
+                  <textarea class="form-control" formControlName="remark"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- {{client | json}} -->
+        <hr>
+        <!-- {{passengerDataForm.value | json}} -->
+      </div>
+    </div>
+    <!--.card-->
+
+    <div class="total-table">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>
+                    Маршрут
+                </th>
+                <th>
+                    Подача
+                </th>
+                <th>
+                    Ожидание на обработку поездки
+                </th>
+                <th>
+                    Всего
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>
+                      {{client?.rate?.title}}
+                  </td>
+                  <td>
+                      {{client?.rate?.supplyCost}} руб
+                  </td>
+                  <td>
+                      + 1 час {{client?.rate?.reverseWayWaitingCost}} руб
+                  </td>
+                  <td>
+                      = {{client?.rate?.supplyCost * 2 -  client?.rate?.supplyCost * client?.rate?.reverseWayDiscount / 100 * +client?.dataRoute?.bothWays}} руб
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div class="col-4 ml-auto">
+                <div class="p-3">
+                    <!-- <button type="submit" class="btn btn-warning btn-lg btn-block" (click)="onClick()">Бронировать</button> -->
+                    <button type="submit" class="btn btn-warning btn-lg btn-block" (click)="open(content)">Бронировать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-prev-next-buttons [previous]="'/supply'" [next]="">
+		</app-prev-next-buttons>
+	</div>
+</div>
+
+
+ <!-- Только на время отладки
+ Модальное окно -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Только для отладки</h4>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+	    <label for="debugEmail">Введите свой e-mail, чтобы убедиться, что данные заказа отправляются</label>
+	    <input type="email" class="form-control" id="debugEmail" placeholder="Enter email"
+	    #i>
+	  </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light"
+    (click)="onClick(i.value); modal.close()">Отправить данные</button>
+  </div>
+</ng-template>

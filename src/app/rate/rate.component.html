@@ -1,10 +1,11 @@
 <div class="container"
 	[ngClass]="{'h-100 d-flex align-items-center justify-content-center': cityRates.length == 0}">
 	
-	<div *ngIf="cityRates.length > 0">
+	<div *ngIf="cityRates.length > 0" class="rates">
 		<div class="form-cards">
 
-		  <div class="card-item" *ngFor="let rate of cityRates; index as i">
+		  <div class="card-item" *ngFor="let rate of cityRates; index as i"
+		  	(click)="onClick(rate)">
 	      <div class="card-item-car">
 	          <img src="assets/images/car-{{i + 1}}.png" alt="">
 	      </div>
