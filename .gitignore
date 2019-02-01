@@ -9,6 +9,11 @@
 /node_modules
 /server/node_modules
 
+# Heroku deployment
+/server/.git
+/server/public
+/server/.gitignore
+
 # IDEs and editors
 /.idea
 .project
