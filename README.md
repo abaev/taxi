@@ -2,7 +2,7 @@
 
 https://taxi-form.herokuapp.com/
 
-Заказ был опубликован на [Weblancer'е](https://www.weblancer.net). Я не был выбран исполнителем, но сделал его **just for fun**.
+Заказ был опубликован на [Weblancer'е](https://www.weblancer.net). Я не был выбран исполнителем, но сделал его, чтобы потренироваться.
 [Задание](https://docs.google.com/document/d/1EZkjOUqRBXSmJw1-nKi66Q4jHF3E9OKfp7Os3lSZBig/edit)
 
 **Изначальный HTML-шаблон верстал не я**, в нем есть пара недостатков, которые не стал исправлять: он не responsive - на мобильных все режется, едет и ломается, кое-где в этом шаблоне применяется `<table>` не для верстки таблиц.
