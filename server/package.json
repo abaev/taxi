@@ -11,6 +11,6 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-sslify": "^1.2.0",
-    "nodemailer": "^4.7.0"
+    "nodemailer": "^6.4.16"
   }
 }
